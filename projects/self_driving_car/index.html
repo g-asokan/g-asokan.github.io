@@ -51,7 +51,7 @@
 
             
             <!-- Resume -->
-            <a class="page-link" target="_blank" href="../../assets/documents/Aviral_Srivastava_Resume.pdf">resume</a>
+            <a class="page-link" target="_blank" href="assets/documents/Gowtham Asokan Resume Jan 2021.pdf">resume</a>
 
             <!-- Pages -->
 
@@ -95,39 +95,35 @@
         </header>
 
         <article class="post-content Boston Business Databas clearfix">
+          
+          <img src="/assets/img/BPDA_Logo.png" width="679" height="233">
+          
+          
           <p>
-            <em>Supervisors:</em>
-            <a href="https://scholar.google.com/citations?user=C3zKMoIAAAAJ&hl=en">Dr. Janaki Meena</a>
+            The project was a collaboration between the Boston Planning & Development Agency (BPDA) and Boston University Spark! to create a comprehensive database
+            of businesses in the Boston area. 
           </p>
           <p>
-            Our model(fully funtional) won an S-grade in Final Year Project submission of batch 2018 at VIT University.
-            We applied
-          </p>
+            The BPDA wanted to build a business database in Boston to understand profiles of businesses in the city along with when they closed during the COVID-19
+            lockdowns. We drew from public API sources such as Bing, Yelp, and Yellowpages by querying the list of all Boston area addresses provided by the City of
+            Boston's SAM Live Address database. 
+            </p>
           <p>
-            Driverless cars are the future. It is one of the most trending technology in which almost every major tech
-            giant is trying to get involved. Tesla, Uber, and Google are the leading companies in this sector. As
-            everyone knows, Artificial Intelligence is the foundation of science that powers most of the technology
-            inside self-driving cars. It relies on many important concepts and models of Machine Learning and Deep
-            Learning. The aim of the project is to build an Autonomous Remote-Controlled (RC) car.</p>
-          <p>
-            The primary goal behind choosing this topic was to get familiar with some of the cutting-edge machine
-            learning concepts and its applications in self-driving cars through project-based-learning.
+            The pipeline for creating the database went as the following: 
+            <br>
+            1) The datasets were scraped from each public API source.
+            <br>
+            2) They were geocoded using the Google geocoder API for zip codes.
+            <br>
+            3) They were cleaned by standardizing data types for numbers and strings.
+            <br>
+            4) The merge between all the datasets was done by dividing the data into batches of zipcodes. 
+            The two datasets being merged would first have the merge done on the same zipcode batch using Dask, then for that zipcode batch the haversine distance between all
+            the possible business combinations would be calculated and filtered for a distance of less than 18 meters. Additionally, a fuzzy similarity ratio was
+            calculated between the now filtered dataset and only the entries with over 85% string similarity were kept. The above steps greatly sped up the merging process
+            between entries that had different information between two sources (Yelp and Bing) but were actually the same business.
           </p>
-          <p>
-            The input feed from the car would be transferred to a computing source. On the computing source training and
-            predictions would be carried out. For intelligent decision making, deep learning neural networks would be
-            used. Specifically, in this project, Artificial Neural Net implementation of OpenCV is used. The model will
-            take the camera feed as the input and predict left, right, forward and backward commands for the car. For
-            detection of stop signs and traffic signals, OpenCV classifiers have been used. The classifiers have been
-            trained for both positive and negative samples for efficient detection of traffic lights and stop signs.
-          </p>
-          <p>
-            Our model(fully functional) won an S-grade in Final Year Project submission of batch 2018 at VIT University.
-          </p>
-          <p align="center">
-            <a class="button" href="https://drive.google.com/file/d/15RwDrBbn7eKt9LVdrUkoXasF01z3mfzf/view?usp=sharing"
-              target="_blank">View Analysis Paper</a>
-          </p>
+      
 
         </article>
 
